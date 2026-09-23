@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+	--page-gutter: clamp(1rem, 4vw, 4rem);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-width: 320px;
+	overflow-x: hidden;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Keep the existing utility-first markup usable between phone and desktop widths. */
+@media (max-width: 1023px) {
+	.fixed > div:last-child {
+		padding-left: var(--page-gutter);
+		padding-right: var(--page-gutter);
+	}
+
+	.fixed > div:last-child > div:first-child {
+		padding-left: 0;
+	}
+
+	.fixed > div:last-child ul {
+		gap: 1rem;
+	}
+
+	.fixed > div:last-child > div:last-child {
+		padding-right: 0;
+		gap: 0.75rem;
+	}
+
+	.grid.grid-cols-2,
+	.grid.grid-cols-3,
+	.grid.grid-cols-5 {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.flex-row,
+	.flex.justify-around {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.w-125,
+	.w-150,
+	.w-200,
+	.w-250 {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.px-10,
+	.px-14,
+	.px-20 {
+		padding-left: var(--page-gutter);
+		padding-right: var(--page-gutter);
+	}
+
+	.ml-10,
+	.ml-12,
+	.ml-14,
+	.ml-28,
+	.ml-56,
+	.mr-8 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	section[class*="bg-[#0c5fb8]"] {
+		margin-left: var(--page-gutter);
+		margin-right: var(--page-gutter);
+	}
+
+	section[class*="bg-[#0c5fb8]"] > div {
+		flex-direction: column;
+	}
+
+	.grid.grid-cols-5 > div,
+	.grid.grid-cols-5 .mt-12 {
+		margin-top: 0;
+		margin-left: 0;
+	}
+
+	.grid.grid-cols-5 {
+		gap: 1.5rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.fixed > div:last-child {
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+	}
+
+	.fixed > div:last-child > div:first-child {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.fixed > div:last-child ul,
+	.fixed > div:last-child > div:last-child img,
+	.fixed > div:last-child > div:last-child a:first-of-type {
+		display: none;
+	}
+
+	.fixed > div:last-child > div:last-child {
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	.fixed > div:last-child > div:last-child a {
+		flex: 1 1 auto;
+		text-align: center;
+	}
+
+	.fixed > div:last-child > div:last-child a button {
+		width: 100%;
+	}
+
+	.pt-28 {
+		padding-top: 9rem;
+	}
+
+	.grid.grid-cols-2,
+	.grid.grid-cols-3 {
+		gap: 1.5rem;
+	}
+
+	.text-5xl {
+		font-size: 2.25rem;
+		line-height: 1.1;
+	}
+
+	.text-4xl {
+		font-size: 1.875rem;
+		line-height: 1.2;
+	}
+
+	.text-3xl {
+		font-size: 1.625rem;
+		line-height: 1.25;
+	}
+
+	.flex.gap-5,
+	.flex.gap-4 {
+		flex-wrap: wrap;
+	}
+
+	.flex.gap-5 > a,
+	.flex.gap-4 > a,
+	.flex.gap-5 button,
+	.flex.gap-4 button {
+		max-width: 100%;
+	}
+
+	section[class*="bg-[#0c5fb8]"] > div {
+		margin-top: 2rem;
+	}
+
+	section[class*="bg-[#0c5fb8]"] h1,
+	section[class*="bg-[#0c5fb8]"] h2,
+	section[class*="bg-[#0c5fb8]"] a {
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+	}
+
+	[class*="bg-[#18212f]"] .flex.gap-5 {
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+		padding: 0 1rem 0.75rem;
+	}
+
+	[class*="bg-[#18212f]"] .flex.gap-5 h1 {
+		margin-left: 0;
+	}
+
+	[class*="bg-[#18212f]"] .flex.gap-5 h2 {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	br {
+		display: none;
+	}
+}
